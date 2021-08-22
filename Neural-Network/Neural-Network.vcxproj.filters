@@ -15,15 +15,21 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Main.cpp">
+    <ClCompile Include="main.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="NeuronalNetwork.cpp">
+    <ClCompile Include="NeuralNetwork.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="ActivationFunctions.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="NeuronalNetwork.h">
+    <ClInclude Include="NeuralNetwork.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
+    <ClInclude Include="ActivationFunctions.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
