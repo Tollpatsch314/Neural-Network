@@ -236,7 +236,7 @@ void NeuralNetwork::NeuralNetwork<TYPE, SIZE>::setWeigthAt(SIZE layer, std::vect
 
 #pragma region Neural Network - all variations for the compiler
 
-#if defined(COMPILE_FLOAT) & defined(COMPILE_UINT8_T)
+#if defined(NN_COMPILE_FLOAT) & defined(NN_COMPILE_UINT8_T)
 template NeuralNetwork::NeuralNetwork<float, uint8_t>::NeuralNetwork(std::initializer_list<uint8_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint8_t>::NeuralNetwork(std::vector<uint8_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint8_t>::NeuralNetwork(std::vector<std::vector<std::vector<float>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -248,7 +248,7 @@ template std::vector<uint8_t> NeuralNetwork::NeuralNetwork<float, uint8_t>::getN
 template std::vector<std::vector<std::vector<float>>> NeuralNetwork::NeuralNetwork<float, uint8_t>::getWeigths();
 #endif	// float & uint8_t
 
-#if defined(COMPILE_FLOAT) & defined(COMPILE_UINT16_T)
+#if defined(NN_COMPILE_FLOAT) & defined(NN_COMPILE_UINT16_T)
 template NeuralNetwork::NeuralNetwork<float, uint16_t>::NeuralNetwork(std::initializer_list<uint16_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint16_t>::NeuralNetwork(std::vector<uint16_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint8_t>::NeuralNetwork(std::vector<uint8_t> numNeurons);
@@ -262,7 +262,7 @@ template std::vector<uint16_t> NeuralNetwork::NeuralNetwork<float, uint16_t>::ge
 template std::vector<std::vector<std::vector<float>>> NeuralNetwork::NeuralNetwork<float, uint16_t>::getWeigths();
 #endif	// float & uint16_t
 
-#if defined(COMPILE_FLOAT) & defined(COMPILE_UINT32_T)
+#if defined(NN_COMPILE_FLOAT) & defined(NN_COMPILE_UINT32_T)
 template NeuralNetwork::NeuralNetwork<float, uint32_t>::NeuralNetwork(std::initializer_list<uint32_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint32_t>::NeuralNetwork(std::vector<uint32_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint32_t>::NeuralNetwork(std::vector<uint32_t> numNeurons);
@@ -275,7 +275,7 @@ template std::vector<uint32_t> NeuralNetwork::NeuralNetwork<float, uint32_t>::ge
 template std::vector<std::vector<std::vector<float>>> NeuralNetwork::NeuralNetwork<float, uint32_t>::getWeigths();
 #endif	// float & uint32_t
 
-#if defined(COMPILE_FLOAT) & defined(COMPILE_UINT64_T)
+#if defined(NN_COMPILE_FLOAT) & defined(NN_COMPILE_UINT64_T)
 template NeuralNetwork::NeuralNetwork<float, uint64_t>::NeuralNetwork(std::initializer_list<uint64_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint64_t>::NeuralNetwork(std::vector<uint64_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<float, uint64_t>::NeuralNetwork(std::vector<uint64_t> numNeurons);
@@ -287,7 +287,7 @@ template std::vector<float>* NeuralNetwork::NeuralNetwork<float, uint64_t>::calc
 template std::vector<uint64_t> NeuralNetwork::NeuralNetwork<float, uint64_t>::getNumOfNeurons();
 #endif	// float & uint64_t
 
-#if defined(COMPILE_DOUBLE) & defined(COMPILE_UINT8_T)
+#if defined(NN_COMPILE_DOUBLE) & defined(NN_COMPILE_UINT8_T)
 template NeuralNetwork::NeuralNetwork<double, uint8_t>::NeuralNetwork(std::initializer_list<uint8_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint8_t>::NeuralNetwork(std::vector<uint8_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint8_t>::NeuralNetwork(std::vector<std::vector<std::vector<double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -299,7 +299,7 @@ template std::vector<uint8_t> NeuralNetwork::NeuralNetwork<double, uint8_t>::get
 template std::vector<std::vector<std::vector<double>>> NeuralNetwork::NeuralNetwork<double, uint8_t>::getWeigths();
 #endif	// double & uint8_t
 
-#if defined(COMPILE_DOUBLE) & defined(COMPILE_UINT16_T)
+#if defined(NN_COMPILE_DOUBLE) & defined(NN_COMPILE_UINT16_T)
 template NeuralNetwork::NeuralNetwork<double, uint16_t>::NeuralNetwork(std::initializer_list<uint16_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint16_t>::NeuralNetwork(std::vector<uint16_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint16_t>::NeuralNetwork(std::vector<std::vector<std::vector<double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -311,7 +311,7 @@ template std::vector<uint16_t> NeuralNetwork::NeuralNetwork<double, uint16_t>::g
 template std::vector<std::vector<std::vector<double>>> NeuralNetwork::NeuralNetwork<double, uint16_t>::getWeigths();
 #endif	// double & uint16_t
 
-#if defined(COMPILE_DOUBLE) & defined(COMPILE_UINT32_T)
+#if defined(NN_COMPILE_DOUBLE) & defined(NN_COMPILE_UINT32_T)
 template NeuralNetwork::NeuralNetwork<double, uint32_t>::NeuralNetwork(std::initializer_list<uint32_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint32_t>::NeuralNetwork(std::vector<uint32_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint32_t>::NeuralNetwork(std::vector<std::vector<std::vector<double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -323,7 +323,7 @@ template std::vector<uint32_t> NeuralNetwork::NeuralNetwork<double, uint32_t>::g
 template std::vector<std::vector<std::vector<double>>> NeuralNetwork::NeuralNetwork<double, uint32_t>::getWeigths();
 #endif	// double & uint32_t
 
-#if defined(COMPILE_DOUBLE) & defined(COMPILE_UINT64_T)
+#if defined(NN_COMPILE_DOUBLE) & defined(NN_COMPILE_UINT64_T)
 template NeuralNetwork::NeuralNetwork<double, uint64_t>::NeuralNetwork(std::initializer_list<uint64_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint64_t>::NeuralNetwork(std::vector<uint64_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<double, uint64_t>::NeuralNetwork(std::vector<std::vector<std::vector<double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -335,7 +335,7 @@ template std::vector<uint64_t> NeuralNetwork::NeuralNetwork<double, uint64_t>::g
 template std::vector<std::vector<std::vector<double>>> NeuralNetwork::NeuralNetwork<double, uint64_t>::getWeigths();
 #endif	// double & uint64_t
 
-#if defined(COMPILE_LONG_DOUBLE) & defined(COMPILE_UINT8_T)
+#if defined(NN_COMPILE_LONG_DOUBLE) & defined(NN_COMPILE_UINT8_T)
 template NeuralNetwork::NeuralNetwork<long double, uint8_t>::NeuralNetwork(std::initializer_list<uint8_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint8_t>::NeuralNetwork(std::vector<uint8_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint8_t>::NeuralNetwork(std::vector<std::vector<std::vector<long double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -347,7 +347,7 @@ template std::vector<uint8_t> NeuralNetwork::NeuralNetwork<long double, uint8_t>
 template std::vector<std::vector<std::vector<long double>>> NeuralNetwork::NeuralNetwork<long double, uint8_t>::getWeigths();
 #endif	// long double & uint8_t
 
-#if defined(COMPILE_LONG_DOUBLE) & defined(COMPILE_UINT16_T)
+#if defined(NN_COMPILE_LONG_DOUBLE) & defined(NN_COMPILE_UINT16_T)
 template NeuralNetwork::NeuralNetwork<long double, uint16_t>::NeuralNetwork(std::initializer_list<uint16_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint16_t>::NeuralNetwork(std::vector<uint16_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint16_t>::NeuralNetwork(std::vector<std::vector<std::vector<long double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -359,7 +359,7 @@ template std::vector<uint16_t> NeuralNetwork::NeuralNetwork<long double, uint16_
 template std::vector<std::vector<std::vector<long double>>> NeuralNetwork::NeuralNetwork<long double, uint16_t>::getWeigths();
 #endif	// long double & uint16_t
 
-#if defined(COMPILE_LONG_DOUBLE) & defined(COMPILE_UINT32_T)
+#if defined(NN_COMPILE_LONG_DOUBLE) & defined(NN_COMPILE_UINT32_T)
 template NeuralNetwork::NeuralNetwork<long double, uint32_t>::NeuralNetwork(std::initializer_list<uint32_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint32_t>::NeuralNetwork(std::vector<uint32_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint32_t>::NeuralNetwork(std::vector<std::vector<std::vector<long double>>> weigths, std::vector<ActivationFunctionType> afts);
@@ -371,7 +371,7 @@ template std::vector<uint32_t> NeuralNetwork::NeuralNetwork<long double, uint32_
 template std::vector<std::vector<std::vector<long double>>> NeuralNetwork::NeuralNetwork<long double, uint32_t>::getWeigths();
 #endif	// long double & uint32_t
 
-#if defined(COMPILE_LONG_DOUBLE) & defined(COMPILE_UINT64_T)
+#if defined(NN_COMPILE_LONG_DOUBLE) & defined(NN_COMPILE_UINT64_T)
 template NeuralNetwork::NeuralNetwork<long double, uint64_t>::NeuralNetwork(std::initializer_list<uint64_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint64_t>::NeuralNetwork(std::vector<uint64_t> numNeurons);
 template NeuralNetwork::NeuralNetwork<long double, uint64_t>::NeuralNetwork(std::vector<std::vector<std::vector<long double>>> weigths, std::vector<ActivationFunctionType> afts);

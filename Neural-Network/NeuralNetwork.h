@@ -1,64 +1,71 @@
 /**********************************************************************************************************************************\
  * file: NeuralNetwork.h
  *
- * author: Karl Jahn tollpatsch3141@web.de
+ * Copyright (c) 2021 Karl Jahn <tollpatsch3141@web.de>
+ * 
  * date: 2021/08/20
  * final processing: 2021/08/20
  * 
- * WARNING: If you change some #define of this Header you must recompile it for changing.
+ * WARNING: If you change some #define of this header you have to recompile it for changing.
  *
 \**********************************************************************************************************************************/
 
 #pragma once
 
 #ifdef DEBUG
-#define COMPILE_ALL_TYPES
-#define COMPILE_ALL_SIZES
+#	define NN_COMPILE_ALL_TYPES
+#	define NN_COMPILE_ALL_SIZES
 #endif // DEBUG
 
 #pragma region TYPES
-#ifdef COMPILE_FLOAT
-#undef COMPILE_ALL_TYPES
-#endif // COMPILE_FLOAT
 
-#ifdef COMPILE_FLOAT
-#undef COMPILE_ALL_TYPES
-#endif // COMPILE_FLOAT
+#	ifdef NN_COMPILE_FLOAT
+#		undef NN_COMPILE_ALL_TYPES
+#	endif // NN_COMPILE_FLOAT
 
-#ifdef COMPILE_FLOAT
-#undef COMPILE_ALL_TYPES
-#endif // COMPILE_FLOAT
+#	ifdef NN_COMPILE_DOUBLE
+#		undef NN_COMPILE_ALL_TYPES
+#	endif // NN_COMPILE_DOUBLE
 
-#if defined(COMPILE_ALL_TYPES)
-#define COMPILE_FLOAT
-#define COMPILE_DOUBLE
-#define COMPILE_LONG_DOUBLE
-#endif // COMPILE_ALL_TYPES
+#	ifdef NN_COMPILE_FLOAT
+#		undef NN_COMPILE_ALL_TYPES
+#	endif // NN_COMPILE_FLOAT
+
+#	ifdef NN_COMPILE_ALL_TYPES
+#		define NN_COMPILE_FLOAT
+#		define NN_COMPILE_DOUBLE
+#		define NN_COMPILE_LONG_DOUBLE
+		#undef NN_COMPILE_ALL_TYPES
+#	endif // NN_COMPILE_ALL_TYPES
+
 #pragma endregion
 
 #pragma region SIZES
-#ifdef COMPILE_UINT8_T
-#undef COMPILE_ALL_SIZES
-#endif // COMPILE_UINT8_T
 
-#ifdef COMPILE_UINT16_T
-#undef COMPILE_ALL_SIZES
-#endif // COMPILE_UINT16_T
+#	ifdef NN_COMPILE_UINT8_T
+#		undef NN_COMPILE_ALL_SIZES
+#	endif // NN_COMPILE_UINT8_T
 
-#ifdef COMPILE_UINT32_T
-#undef COMPILE_ALL_SIZES
-#endif // COMPILE_UINT32_T
+#	ifdef NN_COMPILE_UINT16_T
+#		undef NN_COMPILE_ALL_SIZES
+#	endif // NN_COMPILE_UINT16_T
 
-#ifdef COMPILE_UINT64_T
-#undef COMPILE_ALL_SIZES
-#endif // COMPILE_UINT64_T
+#	ifdef NN_COMPILE_UINT32_T
+#		undef NN_COMPILE_ALL_SIZES
+#	endif // NN_COMPILE_UINT32_T
 
-#if defined(COMPILE_ALL_SIZES)
-#define COMPILE_UINT8_T
-#define COMPILE_UINT16_T
-#define COMPILE_UINT32_T
-#define COMPILE_UINT64_T
-#endif // COMPILE_ALL_SIZES
+#	ifdef NN_COMPILE_UINT64_T
+#		undef NN_COMPILE_ALL_SIZES
+#	endif // NN_COMPILE_UINT64_T
+
+#	ifdef NN_COMPILE_ALL_SIZES
+#		define NN_COMPILE_UINT8_T
+#		define NN_COMPILE_UINT16_T
+#		define NN_COMPILE_UINT32_T
+#		define NN_COMPILE_UINT64_T
+#		undef NN_COMPILE_ALL_SIZES
+#	endif // NN_COMPILE_ALL_SIZES
+
 #pragma endregion
 
 #include "ActivationFunctions.h"
@@ -69,6 +76,11 @@
 
 namespace NeuralNetwork {
 
+	/// <summary>
+	/// 
+	/// </summary>
+	/// <typeparam name="TYPE">float/double/long double</typeparam>
+	/// <typeparam name="SIZE">uint8_t/uint16_t/uint32_t/uint64_t</typeparam>
 	template <typename TYPE=float, typename SIZE=uint16_t> class NeuralNetwork
 	{
 			  /* layer *//* neurons *//* weigths */

@@ -93,10 +93,17 @@ std::string NeuralNetwork::to_string(ActivationFunctionType& aft) {
 	return std::string(NeuralNetwork::ActivationFunctionTypeDescription[(uint8_t)aft]);
 }
 
+#ifdef NN_COMPILE_FLOAT
 template void NeuralNetwork::ActivationFunction<float>(NeuralNetwork::ActivationFunctionType aft, float* value);
-template void NeuralNetwork::ActivationFunction<double>(NeuralNetwork::ActivationFunctionType aft, double* value);
-template void NeuralNetwork::ActivationFunction<long double>(NeuralNetwork::ActivationFunctionType aft, long double* value);
-
 template float NeuralNetwork::ActivationFunction<float>(NeuralNetwork::ActivationFunctionType aft, float value);
+#endif // NN_COMPILE_FLOAT
+
+#ifdef NN_COMPILE_DOUBLE
+template void NeuralNetwork::ActivationFunction<double>(NeuralNetwork::ActivationFunctionType aft, double* value);
 template double NeuralNetwork::ActivationFunction<double>(NeuralNetwork::ActivationFunctionType aft, double value);
+#endif // NN_COMPILE_DOUBLE
+
+#ifdef NN_COMPILE_LONG_DOUBLE
+template void NeuralNetwork::ActivationFunction<long double>(NeuralNetwork::ActivationFunctionType aft, long double* value);
 template long double NeuralNetwork::ActivationFunction<long double>(NeuralNetwork::ActivationFunctionType aft, long double value);
+#endif // NN_COMPILE_LONG_DOUBLE
