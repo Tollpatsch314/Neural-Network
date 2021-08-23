@@ -6,7 +6,7 @@
  * date: 2021/08/20
  * final processing: 2021/08/20
  * 
- * WARNING: If you change some #define of this header you have to recompile it for changing.
+ * WARNING: If you change some macros of this header you have to recompile it for changing.
  *
 \**********************************************************************************************************************************/
 
