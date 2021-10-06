@@ -1,15 +1,3 @@
-/**********************************************************************************************************************************\
- * file: NeuralNetwork.h
- *
- * Copyright (c) 2021 Karl Jahn <tollpatsch3141@web.de>
- * 
- * date: 2021/08/20
- * final processing: 2021/08/23
- * 
- * WARNING: If you change some macros of this header you have to recompile it for changing.
- *
-\**********************************************************************************************************************************/
-
 #pragma once
 
 //#ifdef DEBUG
